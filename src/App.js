@@ -1,26 +1,64 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import DiceRoll from './DiceRoll.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const diceRollAttrs = [
+  {
+    closeable: false,
+  },
+];
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      diceRollAttrs: [
+        {
+          closeable: false,
+        }
+      ]
+    }
+  }
+
+  closeDiceRollComponent = diceRollIndex => {
+    return () => {
+      this.state.diceRollAttrs.splice(diceRollIndex, 1);
+      this.setState({ diceRollAttrs: this.state.diceRollAttrs });
+    }
+  }
+
+  createDiceRollComponent = () => {
+    this.setState(prevState => ({
+      diceRollAttrs: [...prevState.diceRollAttrs, {
+        closeable: true
+      }]
+    }));
+  }
+
+  renderDiceRolls = () => {
+    console.log(this.state.diceRollAttrs.length)
+    return this.state.diceRollAttrs.map((attr, index) =>
+      <DiceRoll
+        key={index}
+        index={index}
+        closeable={attr.closeable}
+        closeDiceRollComponent={this.closeDiceRollComponent}>
+      </DiceRoll>
+    )
+  }
+
+  render = () => {
+    return (
+      <div className="App">
+        <div className="DiceRolls">
+          <div className="DiceRoll-wrapper">
+            { this.renderDiceRolls() }
+          </div>
+          <div onClick={this.createDiceRollComponent}>New</div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
