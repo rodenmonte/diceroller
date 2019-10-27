@@ -49,8 +49,8 @@ class App extends React.Component {
           <div className="DiceRoll-wrapper">
             {this.renderDiceRolls()}
           </div>
-          <div onClick={this.createDiceRollComponent}
-            className="">New</div>
+          <button onClick={this.createDiceRollComponent}
+            className="mainButton">New</button>
         </div>
       </div>
     );

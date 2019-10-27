@@ -25,3 +25,11 @@
   margin: 0 auto;
   max-width: 300px;
 }
+
+.mainButton {
+  border: 3px solid black;
+  color: white;
+  background: green;
+  font-weight: bold;
+  cursor: pointer;
+}

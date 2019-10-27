@@ -37,9 +37,17 @@ class DiceRoll extends React.Component {
     this.setState({ staticIncrement: this.state.staticIncrement - 1 })
   }
 
+  rollDie = () => {
+    return this.state.diceSize * Math.ceil(Math.random())
+
+  }
 
   roll = () => {
-    return (this.state.diceCount * this.state.diceSize) + this.state.staticIncrement;
+    let sumOfRolls = 0;
+    for (let i = 0; i < this.state.diceCount; i++) {
+      sumOfRolls += this.rollDie();
+    }
+    return sumOfRolls + this.state.staticIncrement;
   }
 
   render = () => {
