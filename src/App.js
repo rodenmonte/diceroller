@@ -2,16 +2,18 @@ import React from 'react';
 import './App.css';
 import DiceRoll from './DiceRoll.js';
 
+const defaultDieRollAttrs = [
+  {
+    closeable: false,
+  }
+];
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      diceRollAttrs: [
-        {
-          closeable: false,
-        }
-      ]
+      diceRollAttrs: defaultDieRollAttrs
     }
   }
 
@@ -28,6 +30,20 @@ class App extends React.Component {
         closeable: true
       }]
     }));
+  }
+
+  rollDie = () => {
+    const rollResults = [];
+    for (var i = 0; i < this.state.diceRollAttrs.length; i++) {
+      // call function on DiceRollModel class that will have to be passed down to
+      // DiceRoll components. The DiceRoll model will have to implement the increment/decrement
+      // FNs for the DiceRoll attributes, as well as the roll function.
+    }
+    console.log(rollResults);
+  }
+
+  clearDie = () => {
+    this.setState({ diceRollAttrs: defaultDieRollAttrs });
   }
 
   renderDiceRolls = () => {
@@ -51,6 +67,13 @@ class App extends React.Component {
           </div>
           <button onClick={this.createDiceRollComponent}
             className="mainButton">New</button>
+        </div>
+
+        <div className="RollButtons">
+          <button onClick={this.rollDie}
+            className="mainButton">Roll</button>
+          <button onClick={this.clearDie}
+            className="secondaryButton">Clear</button>
         </div>
       </div>
     );

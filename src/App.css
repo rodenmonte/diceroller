@@ -26,10 +26,23 @@
   max-width: 300px;
 }
 
+.RollButtons {
+  margin: 8px auto;
+}
+
+.mainButton, .secondaryButton {
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .mainButton {
   border: 3px solid black;
   color: white;
-  background: green;
-  font-weight: bold;
-  cursor: pointer;
+  background: black;
+}
+
+.secondaryButton {
+  border: 3px solid white;
+  color: black;
+  background: white;
 }
