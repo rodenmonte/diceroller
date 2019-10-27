@@ -1,77 +1,106 @@
 
 .displayNone {
-    display: none;
+  display: none;
 }
 
 .countInput {
-    width: 30px;
-    text-align: center;
+  width: 30px;
+  text-align: center;
+}
+
+.inline-non-input {
+  margin-top: 8px;
+}
+
+.increment, .decrement {
+  border-radius: 100%;
+  margin: 4px auto;
+  width: 20px;
+  height: 20px;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.increment {
+  background-color: green;
+}
+
+.decrement {
+  background-color: red;
 }
 
 .wrapper {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    /* Not sure if I need any of these... */
-    /* grid-gap: 5px;
-    grid-auto-rows: minmax(20px, auto); */
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* Not sure if I need any of these... */
+  /* grid-gap: 5px;
+  grid-auto-rows: minmax(20px, auto); */
   }
 
 .diceCountPlus {
-    grid-column: 1;
-    grid-row: 1;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .diceSizePlus {
-    grid-column: 3;
-    grid-row: 1;
+  grid-column: 3;
+  grid-row: 1;
 }
 
 .diceIncrementPlus {
-    grid-column: 5;
-    grid-row: 1;
+  grid-column: 5;
+  grid-row: 1;
 }
 
 .close {
-    grid-column: 6;
-    grid-row: 1;
+  color: gray;
+  cursor: pointer;
+
+  grid-column: 6;
+  grid-row: 1;
 }
 
 .diceCountInput {
-    grid-column: 1;
-    grid-row: 2;
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .diceD {
-    grid-column: 2;
-    grid-row: 2;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .diceSizeInput {
-    grid-column: 3;
-    grid-row: 2;
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .diceIncrementPlusSign {
-    grid-column: 4;
-    grid-row: 2;
+  grid-column: 4;
+  grid-row: 2;
 }
 
 .diceIncrementPlusInput {
-    grid-column: 5;
-    grid-row: 2;
+  grid-column: 5;
+  grid-row: 2;
 }
 
 .diceCountMinus {
-    grid-column: 1;
-    grid-row: 3;
+  grid-column: 1;
+  grid-row: 3;
 }
 
 .diceSizeMinus {
-    grid-column: 3;
-    grid-row: 3;
+  grid-column: 3;
+  grid-row: 3;
 }
 
 .diceIncrementMinus {
-    grid-column: 5;
-    grid-row: 3;
+  grid-column: 5;
+  grid-row: 3;
 }

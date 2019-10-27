@@ -2,11 +2,6 @@ import React from 'react';
 import './App.css';
 import DiceRoll from './DiceRoll.js';
 
-const diceRollAttrs = [
-  {
-    closeable: false,
-  },
-];
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -52,9 +47,10 @@ class App extends React.Component {
       <div className="App">
         <div className="DiceRolls">
           <div className="DiceRoll-wrapper">
-            { this.renderDiceRolls() }
+            {this.renderDiceRolls()}
           </div>
-          <div onClick={this.createDiceRollComponent}>New</div>
+          <div onClick={this.createDiceRollComponent}
+            className="">New</div>
         </div>
       </div>
     );
